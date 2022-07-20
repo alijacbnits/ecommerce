@@ -1,0 +1,37 @@
+<section>
+    <h2 style="margin-left: 45%; font-weight: bold;">Cart Lists</h2>
+    <div class="container"  *ngIf="getCartDetails">
+        <table>
+            <tr>
+                <th>Image</th>
+                <!-- <th>Name</th> -->
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Sub Price</th>
+                <th>Remove Item</th>
+            </tr>
+
+            <!-- Cart Table Details -->
+            <tr *ngFor="let getCartDetail of getCartDetails">
+                <td><img src="{{getCartDetail.image}}"></td>
+                <td><i class="fa fa-inr" aria-hidden="true"></i>{{getCartDetail.price}}.00</td>
+                <td>
+                    <div class="content">
+                        <button type="button" class="btn"><i (click)="incQnt(getCartDetail.id, getCartDetail.quantity)" class="fa fa-plus" aria-hidden="true"></i></button>
+                        <span style="font-weight: bold;padding-left: 3%; padding-right: 3%;">{{getCartDetail.quantity}}</span>
+                        <button type="button" class="btn"><i (click)="decQnt(getCartDetail.id, getCartDetail.quantity)"  class="fa fa-minus" aria-hidden="true"></i></button>
+                    </div>
+                </td>
+                <td><i class="fa fa-inr" aria-hidden="true"></i>{{getCartDetail.quantity * getCartDetail.price}}.00</td>
+                <td><button type="button" class="delete-btn" (click)="singleDelete(getCartDetail.id)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+            </tr>
+        </table>
+        <div>
+            <h4><b>Total:</b>&nbsp;<i class="fa fa-inr" aria-hidden="true"></i>{{total}}.00</h4>
+        </div>
+        <div>
+            <button type="button" class="remove-btn" (click)="removeall()">Remove all</button>
+        </div>
+    </div>
+    
+</section>

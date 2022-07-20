@@ -1,0 +1,76 @@
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {
+    margin-left: 10%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .btn {
+    border-radius: 50%;
+    background-color: sienna;
+    color: white;
+  }
+
+  .content {
+    margin-left: 15%;
+    margin-bottom: 6%;
+  }
+
+  .cart-button {
+    margin-left: 15%;
+    background-color: sienna;
+    border-radius: 8px;
+    border: none;
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .prod-img {
+    border-radius: 50%;
+    width: 200px;
+    height: 180px;
+  }
+
+  .btn-tab {
+    border-radius: 8px;
+    border: none;
+    width: 100px;
+    height: 30px;
+    background-color: seagreen;
+    color: white;
+    font-weight: bold;
+    margin-left: -3%;
+  }
+
+  .img-tab {
+    border-radius: 50%;
+  }
+
+  .sort-tab {
+    margin-left: 75%;
+    border-radius: 8px;
+    width: 150px;
+    height: 35px;
+    padding-left: 5px;
+  }
+
+  .filter-tab {
+    border-radius: 8px;
+    margin-left: 2%;
+    width: 150px;
+    height: 35px;
+    padding-left: 5px;
+  }

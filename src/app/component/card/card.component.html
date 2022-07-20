@@ -1,0 +1,58 @@
+<div class="card-top">
+    <div class="card-container" style="display: inline-flex;">
+        <!-- For All Items -->
+        <div class="item" style="margin-left: 28%;">
+            <a (click)='categoryFilter = categoryFilter=="all" ? "" : "all"'>
+                <img class="img-tab" src="https://img.freepik.com/free-photo/healthy-vegetables-wooden-table_1150-38014.jpg?w=2000" style="width: 10%;">
+                <br/><br/><button type="button" class="btn-tab">All</button>
+            </a>    
+        </div>
+        <!-- For Vegetables Items -->
+        <div class="item" style="margin-left: -15%;">
+            <a (click)='categoryFilter = categoryFilter=="vegetable" ? "" : "vegetable"'>
+                <img class="img-tab" src="https://img.freepik.com/free-photo/healthy-vegetables-wooden-table_1150-38014.jpg?w=2000" style="width: 10%;">
+                <br/><br/><button type="button" class="btn-tab">Vegetables</button>
+            </a>    
+        </div>
+        <!-- For Fruits Items -->
+        <div class="item" style="margin-left: -15%;">
+            <a (click)='categoryFilter = categoryFilter=="fruit" ? "" : "fruit"'>
+                <img class="img-tab" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg" style="width: 10%;">
+                <br/><br/><button type="button" class="btn-tab">Fruits</button>
+            </a>    
+        </div>
+</div>
+
+<!-- For Sorting Price -->
+<select class="sort-tab" id="sort-by" (change)="sort($event)">
+    <option value="" selected disabled hidden>Sort By</option>
+    <option value="low">Show Low to High Price</option>
+    <option value="high">Show High to Low Price</option>
+</select>
+
+<!-- For Filter Color -->
+<Select class="filter-tab" id="filter-by" (change)="filter($event)">
+    <option value="" selected disabled hidden>Filter By</option>
+    <option value="red">Red</option>
+</Select>
+
+<div class="row">
+        <div class="column" *ngFor="let product of Products(items)"> 
+        <img class="prod-img" src="{{product.image}}">
+        <h4 style="margin-left: 20%;">{{product.name}}</h4>
+        <h4 style="margin-left: 22%;"><i class="fa fa-inr" aria-hidden="true"></i>{{product.price}}.00</h4>
+        <h4 style="margin-left: 22%;">{{product.color}}</h4>
+        
+        <!-- For Quantity Increment & Decrement -->
+        <div class="content">
+            <button type="button" class="btn"><i (click)="inc(product)" class="fa fa-plus" aria-hidden="true"></i></button>
+            <span style="font-weight: bold; padding-left: 3%; padding-right: 3%;">{{product.quantity}}</span>
+            <button type="button" class="btn"><i (click)="dec(product)" class="fa fa-minus" aria-hidden="true"></i></button>
+        </div>
+        <button class="cart-button" (click)="addCart(product)">Add to Cart</button>
+    </div>
+</div>
+
+    </div>
+
+    

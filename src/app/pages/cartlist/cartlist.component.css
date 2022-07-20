@@ -1,0 +1,39 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"; 
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .btn {
+    border-radius: 50%;
+    background-color: sienna;
+    color: white;
+  }
+
+  .delete-btn {
+    color: red;
+    background-color: #fff;
+    border-color: red;
+  }
+
+  .remove-btn {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+    margin-left: 90%;
+    width: 10%;
+  }
+
+ 
