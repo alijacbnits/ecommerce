@@ -1,0 +1,22 @@
+.checkout-form{
+    margin-left: 40%;
+    margin-top: 10%;
+}
+
+.submit-button {
+    margin-left: 10%;
+    background-color: green;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    width: 10%;
+}
+
+input {
+    border-radius: 8px;
+    width: 30%;
+}
+
+.error-span {
+    color: red;
+}

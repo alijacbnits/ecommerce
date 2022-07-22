@@ -1,0 +1,26 @@
+<section>
+    <h2 style="margin-left: 45%; font-weight: bold;">Order Lists</h2>
+    <div class="container">
+            <!-- Cart Table Details -->
+            <div *ngFor="let getOrderDetail of getOrderDetails">
+                <div style="width: 100%; background-color: rgb(175, 225, 245);">{{getOrderDetail.orderId}}
+                   <h4 style="margin-left: 90%; margin-top: -2%;"> {{getOrderDetail.status}}</h4>
+                    
+                </div>
+                <div *ngFor="let product of getOrderDetail.products">
+                    <img src="{{product.image}}"/>
+                    <p style="margin-left: 35%; margin-top: -5%">{{product.name}}</p>
+                    <p style="margin-left: 55%; margin-top: -3%">{{product.quantity}}</p>
+                    <p style="margin-left: 75%; margin-top: -3%">{{product.price}}</p>
+                    <p style="margin-left: 95%; margin-top: -3%">{{product.quantity * product.price}}</p>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                    <div>{{getOrderDetail.date}}
+                        <h4 style="margin-left: 85%; margin-top: -2.5%;"><b>Total:</b>&nbsp;<i class="fa fa-inr" aria-hidden="true"></i>{{getOrderDetail.orderPrice}}.00</h4>
+                    </div>    
+                <button type="button" class="cancel-btn" (click)="onCancelOrder(getOrderDetail.orderId)">Cancel</button>
+            </div>
+    </div>
+</section>

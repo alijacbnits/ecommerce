@@ -15,6 +15,14 @@ const routes: Routes = [
     path: 'post/cartlist',
     loadChildren: () => import('./pages/cartlist/cartlist.module').then((m)=>m.CartlistModule)   
   },
+  {
+    path: 'post/checkout',
+    loadChildren: () => import('./pages/checkout/checkout.module').then((m)=>m.CheckoutModule)   
+  },
+  {
+    path: 'post/orderlist',
+    loadChildren: () => import('./pages/orderlist/orderlist.module').then((m)=>m.OrderlistModule)   
+  },
   
 ];
 

@@ -1,0 +1,29 @@
+<form class="checkout-form" 
+#simpleForm="ngForm"
+[formGroup]="checkForm"
+(ngSubmit)="submit(simpleForm.value)">
+   <div>
+        <label>Name: </label><br/>
+            <input type="text"   
+            name="first_name"
+            formControlName="name"
+            placeholder="Please Enter Your Name"><br/>
+        <span class="error-span" *ngIf="name?.invalid && name?.touched">* Name is Required</span><br/>
+
+        <label>Address: </label><br/>
+        <input type="text" 
+        name="address" 
+        formControlName="address"
+        placeholder="Please Enter Your Address"><br/>
+        <span class="error-span" *ngIf="address?.invalid && address?.touched">* Address is Required</span><br/>
+        
+        <label>Ph No.: </label><br/>
+        <input type="number" 
+        name="phone" 
+        formControlName="phone"
+        placeholder="Please Enter Your Phone Number"><br/>
+        <span class="error-span" *ngIf="phone?.invalid && phone?.touched">* Phone Number is Required</span><br/><br/>
+        <button class="submit-button">Place Order</button>
+    </div>
+</form>
+
